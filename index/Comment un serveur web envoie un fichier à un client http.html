@@ -1,0 +1,66 @@
+<h1>index</h1>
+<pre>
+PRÉ-REQUIS : PHP installé avec mbstring
+
+
+Démarrer le serveur php
+  Ouvrir un terminal
+  Créer un dossier toolbox
+     mkdir ~/toolbox
+  Aller dans le dossier toolbox
+     cd ~/toolbox
+  Ouvrir votre éditeur de code préféré (notepad, VSCode, ...)
+     code .
+  Démarrer le serveur
+     php -S localhost:8000
+Vérifier que le serveur est démarré
+      1. Message
+         Résultat
+         PHP 8.3.6 Development Server
+                     (http://localhost:8000) started
+PHP SERVER STARTED
+      2. Sur la même machine, ouvrir un second terminal
+         dans bash
+      3. Commande
+           ss -tulpn | grep 8000
+           Résultat
+           LISTEN 0      4096        127.0.0.1:8000
+
+      4. Commande
+           curl localhost:8000
+           Résultat
+            .doctype html... .html.
+      5. Navigateur
+           localhost:8000
+           Résultat
+           The requested resource /
+           was not found on this server.
+
+Dans le terminal, couper le serveur avec Ctrl+C
+
+Dans VS code créer un dossier+fichier index/index.html
+Mettre du texte html dans index, par exemple <h1>index</h1>
+
+Redémarrer le serveur dans le dossier index
+
+cd index
+php -S localhost:8000
+
+Vérifer avec curl et dans le Navigateur
+
+curl localhost:8000
+http://localhost:8000
+
+Créer d'autres dossiers/fichiers et constater le Résultat
+avec curl et dans le Navigateur
+
+POUR FINIR
+
+Renommer le fichier index.html en
+- "Comment un serveur web envoie un fichier à un client http.html"
+- Créer un fichier index.html avec
+  < a href="Comment%20un%20serveur%20web%20envoie%20un%20fichier%20à%20un%20client%20http.html"  >Comment un serveur web envoie un fichier à un client http < /a >
+
+
+
+</pre>
