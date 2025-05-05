@@ -82,7 +82,7 @@ Sur un autre terminal, envoyer le texte à bash
 
 ```bash
 # serveur
-netcat localhost 8000 > /tmp/chat.txt
+netcat-l 8000
 # client
 netcat localhost 8000 > /tmp/chat.txt
 # serveur
@@ -90,7 +90,6 @@ ligne1
 ligne2
 ligne3
 # client
-^C
 cat /tmp/chat.txt
 ```
 
@@ -101,18 +100,17 @@ cat /tmp/chat.txt
 ```bash
 # serveur destinataire du fichier
 netcat -l 8000 > fichier.test
-# client éméteur du fichier
-netcat -w 1 localhost 800
-0 < index.html
+# client émetteur du fichier
+netcat -w 1 localhost 8000  0<index.html
 ```
 
 ### Fichier binaire
 
 ```bash
 # serveur / réception de l'image
-netcat -l 8000 > image.jpg
+netcat -l 8000 > /tmp/image.png
 # client / envoi de l'image
-netcat -w 1 localhost 8000 < image.jpg
-echo "il faut maintenant ouvrir image.jpg pour visualiser"
+netcat -w 1 localhost 8000 < image.png
+echo "il faut maintenant ouvrir image.png pour visualiser"
 echo "   vous pouvez utiliser tiv, feh, mspaint.exe, gimp, votre navigateur..."
 ```
